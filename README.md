@@ -1,6 +1,7 @@
 ## Bayesian Machine Learning with Generative AI Applications
 ### Predicting Box Office Success: A Bayesian Approach Using Movie Metadata
 Win 25 | The Matrix Masters 🏆
+
 Authors: Ritai Na, Dazhou Wu, Yidi Wang, Lucia Liu, Yiyang Yao
 
 ### Abstract:
