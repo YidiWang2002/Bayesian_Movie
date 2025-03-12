@@ -97,16 +97,17 @@ The following visualizations illustrate the effectiveness of our models:
 _(To be included: Graphs and illustrations to enhance understanding.)_
 
 ## Future Work
-### Next Steps
-- Improve Bayesian modeling to enhance revenue prediction accuracy.
-- Incorporate visualization tools to better interpret HMM transitions.
-- Extend the model to predict **future movie success probabilities**.
+Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several promising directions for future work that can enhance its usability and performance:
+
+1. **Generating new data from LLM to forecast its box office revenue**
+w
+   We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
+
+2. **Developing a Web Interface or UI for Easier Prediction**  
+   We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
+
+3. **Expanded Feature Set and Scenario Exploration**  
+   Additional features—such as seasonal indicators, economic indicators, or social media sentiment—could be integrated into the model to capture further nuances in movie performance. This exploration could lead to a richer understanding of factors affecting box office revenue.
 
 
 
-
-
-
-
-## Contact
-For inquiries, feel free to reach out or contribute to the project!
