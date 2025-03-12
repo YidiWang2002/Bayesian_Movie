@@ -70,6 +70,7 @@ model_2_states.fit(X_scaled)
 
 ### 4. Model Result
 ![HMM Transition Matrix](./images/hmm_tran_matrix.png)
+
 This matrix tells us that if the market is in state 0 (e.g., a high revenue state), there is a 62.3% chance that it will remain in state 0 and a 37.7% chance of switching to state 1 (e.g., a lower revenue state) in the next period.
 
 
