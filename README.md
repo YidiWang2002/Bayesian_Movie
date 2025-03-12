@@ -9,5 +9,3 @@ This project explores predicting box office success using a Bayesian approach wi
 By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust probabilistic framework for revenue forecasting.
 Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
 
-### Test:
-TESTTESTTEST
