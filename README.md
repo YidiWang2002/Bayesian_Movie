@@ -25,6 +25,9 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 ## **Bayesian Network**
 
+## **Hierarchical Bayesian Modeling (HBM)**
+
+
 ## **Hidden Markov Model**
 - Selected key features and applied **StandardScaler** for normalization.
 - Trained a **2-state Gaussian HMM** using `hmmlearn`.
