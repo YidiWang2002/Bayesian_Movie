@@ -12,7 +12,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 ## Table of Contents
 - [Overview](#Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
-- [Bayesian Network](#Baayesian-Network)
+- [Bayesian Network](#Bayesian-Network)
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [Hierarchical Bayesian Model with HMM](#Hierarchical-bayesian-model-with-HMM)
 - [MCMC Sampling](#MCMC-Sampling)
