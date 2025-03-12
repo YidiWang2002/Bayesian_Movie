@@ -10,11 +10,11 @@ By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Marko
 Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
 
 ## Table of Contents
-- [Overview](#overview)
-- [Data Processing and EDA](#data-description)
-- [Bayesian Network](#feature-engineering)
-- [Hidden Markov Model](#hmm-modeling)
-- [Hierarchical Bayesian Model with HMM](#hierarchical-bayesian-regression)
+- [Overview](#Overview)
+- [Data Processing and EDA](#Data-Processing-and-EDA)
+- [Bayesian Network](#Baayesian-Network)
+- [Hidden Markov Model](#Hidden-Markov-Model)
+- [Hierarchical Bayesian Model with HMM](#Hierarchical-bayesian-model-with-HMM)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
 
