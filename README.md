@@ -12,6 +12,15 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 ## **Overview**
 This project explores the application of **Hidden Markov Models (HMM)** and **Hierarchical Bayesian Modeling (HBM)** in analyzing trends in the movie industry. By leveraging machine learning and probabilistic modeling, we extract latent patterns from historical movie data.
 
+## Table of Contents
+- [Overview](#overview)
+- [Data Processing and EDA](#data-description)
+- [Bayesian Network](#feature-engineering)
+- [Hidden Markov Model](#hmm-modeling)
+- [Hierarchical Bayesian Model with HMM](#hierarchical-bayesian-regression)
+- [MCMC Sampling](#MCMC-Sampling)
+- [Future Work](#future-work)
+
 ## **Data Processing and EDA**
 
 ## **Bayesian Network**
