@@ -16,7 +16,7 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 ## **Bayesian Network**
 
-## ** Hidden Markov Model (HMM) Implementation**
+## **Hidden Markov Model (HMM) Implementation**
 - Selected key features and applied **StandardScaler** for normalization.
 - Trained a **2-state Gaussian HMM** using `hmmlearn`.
 - Extracted **state transition probabilities**, **state means**, and **covariances**.
