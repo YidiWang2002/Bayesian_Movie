@@ -13,7 +13,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Overview](#Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
 - [Bayesian Network](#Bayesian-Network)
-- [Hidden Markov Model](#Hidden-Markov-Model-(HMM))
+- [Hidden Markov Model](#Hidden-Markov-Model)
 - [Hierarchical Bayesian Model with HMM](#Hierarchical-bayesian-model-with-HMM)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
@@ -25,7 +25,7 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 ## **Bayesian Network**
 
-## **Hidden Markov Model (HMM)**
+## **Hidden Markov Model**
 - Selected key features and applied **StandardScaler** for normalization.
 - Trained a **2-state Gaussian HMM** using `hmmlearn`.
 - Extracted **state transition probabilities**, **state means**, and **covariances**.
