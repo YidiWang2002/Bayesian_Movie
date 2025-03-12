@@ -9,9 +9,6 @@ This project explores predicting box office success using a Bayesian approach wi
 By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust probabilistic framework for revenue forecasting.
 Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
 
-## **Overview**
-This project explores the application of **Hidden Markov Models (HMM)** and **Hierarchical Bayesian Modeling (HBM)** in analyzing trends in the movie industry. By leveraging machine learning and probabilistic modeling, we extract latent patterns from historical movie data.
-
 ## Table of Contents
 - [Overview](#overview)
 - [Data Processing and EDA](#data-description)
@@ -20,6 +17,9 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 - [Hierarchical Bayesian Model with HMM](#hierarchical-bayesian-regression)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
+
+## **Overview**
+This project explores the application of **Hidden Markov Models (HMM)** and **Hierarchical Bayesian Modeling (HBM)** in analyzing trends in the movie industry. By leveraging machine learning and probabilistic modeling, we extract latent patterns from historical movie data.
 
 ## **Data Processing and EDA**
 
