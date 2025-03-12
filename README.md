@@ -28,29 +28,50 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 ## **Hierarchical Bayesian Modeling (HBM)**
 
 
-## **Hidden Markov Model**
-- Selected key features and applied **StandardScaler** for normalization.
-- Trained a **2-state Gaussian HMM** using `hmmlearn`.
-- Extracted **state transition probabilities**, **state means**, and **covariances**.
-- Predicted hidden states for movies, categorizing them into different revenue-performance groups.
+## Hidden Markov Model 
 
-### Methodology
-### **Feature Engineering**
-- Handled missing values using **median imputation** and **KNN imputation**.
-- Applied **log transformation** to normalize skewed financial data.
-- Sorted movies chronologically based on their release dates.
+This model outlines the use of a Gaussian Hidden Markov Model (HMM) to capture latent market dynamics in movie box office data. The HMM model should be helpful combing with the Hierarchical Bayesian Model. 
 
-### **HMM Transition Matrix**
-```plaintext
-| From | To State 0 | To State 1 |
-|------|-----------|-----------|
-| **State 0** | 0.623 | 0.377 |
-| **State 1** | 0.474 | 0.526 |
+### 1. HMM Model Definition
+A **Hidden Markov Model (HMM)** is a statistical model for time series data where the system is assumed to be a Markov process with unobserved (hidden) states. 
+In our application:
+- **Hidden States** represent the underlying market conditions (e.g., "high revenue" vs. "low revenue" periods) that are not directly observed.
+- **Emission Probabilities** assume that the observed data (e.g., log-transformed box office numbers) are generated from a probability distribution (in our case, a Gaussian) specific to each hidden state.
+- **Transition Matrix** describes the probabilities of transitioning from one hidden state to another between successive movies (or time periods). This matrix is key in understanding the dynamics of market state changes.
+
+
+### 2. Feature Engineering for HMM
+Effective feature engineering is crucial for accurately capturing the latent dynamics in movie box office data. Our approach involves processing various types of features, but it is important to note that for the HMM model, we only use numerical variables since there may be
+- **Temporal Ordering**: Numerical variables such as log-transformed production budget, domestic gross, worldwide gross, opening weekend, max theaters, and weeks run naturally have a time order when arranged sequentially by movie release timing. This temporal ordering is essential for HMMs to capture market dynamics.
+```python
+log_transform_cols = [
+    'Production Budget (USD)', 'Domestic Gross (USD)', 'Worldwide Gross (USD)',
+    'Opening Weekend (USD)', 'Max Theaters', 'Weeks Run'
+]
+```
+```python
+df_sorted = df.sort_values(by=['Release_Year', 'Release_Month', 'Release_DayOfWeek'])
 ```
 
-*Interpretation:
-- **State 0**: Represents movies with **higher revenue and longer theatrical runs**.
-- **State 1**: Represents movies with **lower revenue and shorter runs**.
+- **Model Compatibility**: Gaussian HMMs assume that observations are continuous and approximately normally distributed within each hidden state. 
+- **Avoiding High-Dimensional Noise**: Textual data requires additional NLP processing to convert them into numerical form. However, text data typically lack inherent sequential order that reflects market dynamics.
+
+### 3. Model Building
+```python
+X = df_features.values
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+model_2_states = GaussianHMM(n_components=2, covariance_type="full", n_iter=1000, random_state=42)
+model_2_states.fit(X_scaled)
+```
+
+
+### 4. Model Result
+![HMM Transition Matrix](./images/hmm_tran_matrix.png)
+This matrix tells us that if the market is in state 0 (e.g., a high revenue state), there is a 62.3% chance that it will remain in state 0 and a 37.7% chance of switching to state 1 (e.g., a lower revenue state) in the next period.
+
 
 
 
