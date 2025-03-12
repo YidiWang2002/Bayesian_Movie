@@ -45,8 +45,7 @@ Effective feature engineering is crucial for accurately capturing the latent dyn
 - **Temporal Ordering**: Numerical variables such as log-transformed production budget, domestic gross, worldwide gross, opening weekend, max theaters, and weeks run naturally have a time order when arranged sequentially by movie release timing. This temporal ordering is essential for HMMs to capture market dynamics.
 ```python
 log_transform_cols = [
-    'Production Budget (USD)', 'Domestic Gross (USD)', 'Worldwide Gross (USD)',
-    'Opening Weekend (USD)', 'Max Theaters', 'Weeks Run'
+    'Production Budget (USD)', 'Domestic Gross (USD)', 'Worldwide Gross (USD)','Opening Weekend (USD)', 'Max Theaters', 'Weeks Run'
 ]
 ```
 ```python
