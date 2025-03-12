@@ -42,7 +42,7 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 
 
-## **Hierarchical Bayesian Model**
+## **Hierarchical Bayesian Model with HMM**
 
 ## Usage
 1. **Load and preprocess data** using `pandas`.
