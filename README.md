@@ -223,13 +223,6 @@ The model fitting with MCMC sampling produced reliable estimates:
 
 Trace plots from the MCMC sampling confirmed good mixing and convergence, indicating the robustness of our model in capturing the relationship between production budgets and box office returns. The posterior distributions are indicative of the variability and uncertainty inherent in movie revenue predictions, allowing for better-informed decision-making in production investment strategies.
 
-The following visualizations illustrate the effectiveness of our models:
-1. **Hidden States Over Time**: A time series showing how movie states transition.
-2. **State Feature Distributions**: Comparing movie attributes across hidden states.
-3. **Predicted vs Actual Movie Performance**: Evaluating HMM’s predictive power.
-
-_(To be included: Graphs and illustrations to enhance understanding.)_
-
 ***
 ### Final Results & Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
