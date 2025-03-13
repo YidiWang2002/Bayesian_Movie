@@ -41,7 +41,7 @@ With these steps, our dataset is robust and ready for:
 - **Hierarchical Bayesian Regression with MCMC Sampling** (predicting box office revenue with uncertainty)
 - **Hidden Markov Model Analysis** (capturing market dynamics).
 
-<img width="798" alt="image" src="https://github.com/user-attachments/assets/388fe644-72e8-4d81-87c2-5ee787f6de06" />
+<img width="575" alt="image" src="https://github.com/user-attachments/assets/ecd6b1cd-f141-4c6e-ac8b-4f9b1b3ffa91" />
 <img width="918" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
 <img width="936" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
 
