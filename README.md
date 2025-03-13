@@ -29,7 +29,8 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - **MCMC Sampling:** To efficiently estimate the full posterior distributions of model parameters, providing robust uncertainty quantification and credible intervals for revenue forecasts.
 
 **Rigorous data cleaning, feature engineering, and exploratory analysis ensure that our input data is both accurate and informative.** The result is a multi-layered, probabilistic model that not only predicts revenue with enhanced precision but also delivers actionable insights for investors and studios navigating a complex and volatile market environment.
-——————
+
+***
 ## **Data Processing and EDA**
 
 Our data processing pipeline ensures that our movie metadata is clean, informative, and ready for Bayesian modeling. Key steps include:
@@ -39,7 +40,8 @@ We removed unwanted columns—such as pure identifiers (e.g., `id`, `Movie URL`)
 
 **Entropy-Based Feature Selection:**  
 We computed metadata for each feature—including missing value rates, number of unique values, entropy, and coefficient of variation—and filtered out features with more than 50% missing values, entropy below 30%, or (for numerical features) a coefficient of variation less than 0.2. This automated process allowed us to retain only the most informative features.
-——————
+
+***
 **EDA Visualizations:**  
 To understand data distributions and identify potential multicollinearity, we generated key visualizations such as histograms (e.g., for the log-transformed production budget) and correlation heatmaps.
 
@@ -53,7 +55,8 @@ With these steps, our dataset is robust and ready for:
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/ecd6b1cd-f141-4c6e-ac8b-4f9b1b3ffa91" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
-——————
+
+***
 ## **Bayesian Network**
 This project leverages a Bayesian Network to predict a movie’s box office success using probabilistic modeling. We apply Bayesian Inference to analyze the impact of key production factors like budget, opening weekend revenue, theater count, genre, and MPAA rating on box office performance.
 
@@ -72,6 +75,7 @@ What is the probability of success given a high budget and large theater release
 
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
+***
 ## **Hierarchical Bayesian Model**
 ### 1. Definition
 A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
@@ -128,7 +132,7 @@ The model was fit using **MCMC sampling** with **pm.sample()**.
 - **Production Budget** (with a mean of 0.814) suggests that it has a strong positive effect on the **target variable**.
 - The model suggests that the predictor variables have a statistically significant impact on the target variable, with most coefficients being positive. The model fits the data well, as indicated by the stable sigma and the good convergence diagnostics (R-hat values near 1).
 
-
+***
 ## Hidden Markov Model 
 
 This model outlines the use of a Gaussian Hidden Markov Model (HMM) to capture latent market dynamics in movie box office data. The HMM model should be helpful combing with the Hierarchical Bayesian Model. 
@@ -172,7 +176,8 @@ model_2_states.fit(X_scaled)
 ![HMM Transition Matrix](./images/hmm_tran_matrix.png)
 
 This matrix tells us that if the market is in state 0 (e.g., a high revenue state), there is a 62.3% chance that it will remain in state 0 and a 37.7% chance of switching to state 1 (e.g., a lower revenue state) in the next period.
-  
+
+***
 ## MCMC sampling
 
 ### MCMC Benifits
@@ -225,10 +230,10 @@ The following visualizations illustrate the effectiveness of our models:
 
 _(To be included: Graphs and illustrations to enhance understanding.)_
 
+***
 ### Final Results & Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
 ![Final Model Result](./images/final_result.png)
-
 
 
 #### Key Obeservation:
@@ -254,6 +259,7 @@ After training our final hierarchical Bayesian model-incorporating global interc
    - The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
    - In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
 
+***
 #### Prediction Model
 
 ![MCMC Results](./images/final_pred_unlog.png)
@@ -268,6 +274,7 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 ### Overall Good Fit!
 
+***
 ## Future Work
 Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several directions for future work that can enhance its usability and performance:
 
