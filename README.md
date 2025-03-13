@@ -13,8 +13,8 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Overview](#Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
 - [Bayesian Network](#Bayesian-Network)
+- [Hierarchical Bayesian Model (HBM)](#Hierarchical-bayesian-model-(HBM))
 - [Hidden Markov Model](#Hidden-Markov-Model)
-- [Hierarchical Bayesian Model with HMM](#Hierarchical-bayesian-model-with-HMM)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
 
@@ -70,7 +70,7 @@ What is the probability of success given a high budget and large theater release
 
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
-## **Hierarchical Bayesian Modeling (HBM)**
+### **Hierarchical Bayesian Modeling (HBM)**
 1. A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
 
 2. **Bayesian Framework**
@@ -199,10 +199,10 @@ Here, $p(\theta|Y)$  is the posterior distribution, and 𝑞 is the proposal dis
 Draw 𝑢 from a uniform distribution U(0,1). If $u\leq\alpha$, accept $\theta^{*}$ as $\theta^{(t)}$; otherwise, set $\theta^{(t)}=\theta^{(t-1)}$
 #### Repeat:
 Continue the iteration until convergence.
-### Implementation in Movie Box-Office Prediction Analysis
+#### Implementation in Movie Box-Office Prediction Analysis
 In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
-### Results & Visualization
+#### Examples
 ![MCMC Results](./images/MCMC_Result.png)
 
 The model fitting with MCMC sampling produced reliable estimates:
@@ -222,7 +222,7 @@ The following visualizations illustrate the effectiveness of our models:
 
 _(To be included: Graphs and illustrations to enhance understanding.)_
 
-### Results & Visualization
+### Final Results & Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
 ![output1](https://github.com/user-attachments/assets/2c64e1d6-1b66-4c6a-84c6-3ff2566975d6)
 
