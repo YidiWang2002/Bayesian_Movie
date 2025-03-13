@@ -23,21 +23,42 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 ## **Data Processing and EDA**
 
-In this project, we implemented a comprehensive **data processing and exploratory data analysis (EDA)** pipeline to ensure that our movie metadata is both robust and informative for subsequent **Bayesian modeling**. First, we removed unwanted columns that either serve as identifiers or contain redundant information. For example, we dropped fields such as the movie ID and URLs, and we eliminated redundant dummy variables for **MPAA ratings** to avoid duplication.
+Our data processing pipeline ensures that our movie metadata is clean, informative, and ready for Bayesian modeling. Key steps include:
 
-Next, we converted our date columns into proper datetime objects, which allowed us to extract useful temporal features such as the **release year**, **release month**, and **day of the week**. These features are essential for capturing seasonal trends and other time-related effects in movie performance. In parallel, we carefully processed the financial data by addressing inconsistencies in domestic and worldwide revenue figures. We adjusted values for cases where domestic gross equals worldwide gross and computed key financial ratios such as the **production budget to worldwide gross ratio** and the **domestic versus international ratio**. To reduce skewness in the data, we applied **logarithmic transformations** to key financial variables.
+- **Data Cleaning & Feature Engineering**
+  - **Remove Unwanted Columns:**  
+    - Dropped pure identifiers and redundant fields (e.g., `id`, `Movie Name`, `Movie URL`).
+    - Eliminated redundant MPAA dummy columns.
+  - **Date Processing:**  
+    - Converted date columns to datetime.
+    - Extracted temporal features: **Release_Year**, **Release_Month**, and **Release_DayOfWeek**.
+  - **Financial Data Adjustments:**  
+    - Corrected inconsistencies between domestic and worldwide revenues.
+    - Calculated key ratios: **Budget_to_WorldGross_Ratio** and **Domestic_vs_International_Ratio**.
+    - Applied log transformations to reduce skewness (e.g., `Production Budget (USD)_log`).
+  - **Categorical Data Cleaning:**  
+    - Standardized text for fields like **MPAA Rating**, **Source**, **Genre**, and **Creative Type**.
+    - Unified similar categories to ensure consistency.
 
-For the categorical data, we standardized text fields by trimming extra spaces, converting text to title case, and merging similar categories to ensure consistency. For instance, we cleaned and unified the **MPAA rating** and **source** fields so that similar values were grouped together.
+- **Entropy-Based Feature Selection**
+  - Computed metadata for each feature (missing rate, unique values, entropy, coefficient of variation).
+  - Filtered out features with:
+    - More than **50%** missing values,
+    - Entropy percentage below **30%**, and
+    - For numeric features, a coefficient of variation less than **0.2**.
+  - Retained only the most informative features.
 
-To further refine our dataset, we applied an **entropy-based feature selection** process. This method calculates metadata for each feature—including the missing value rate, the number of unique values, entropy, and the coefficient of variation—and automatically filters out features that are either too sparse or exhibit low information content. As a result, we retained only those features with a missing rate below **50%**, an entropy percentage above **30%**, and, for numerical variables, a coefficient of variation of at least **0.2**.
+- **EDA Visualizations**
+  - Generated histograms (e.g., distribution of log-transformed production budget) and heatmaps (e.g., correlation heatmap) to inspect data distributions and multicollinearity.
 
-Finally, we conducted EDA by visualizing key distributions and correlation structures among the selected features. Histograms and heatmaps were generated to help us understand the underlying data distributions and to identify potential multicollinearity issues. With this rigorous data processing and EDA, our dataset is now well-prepared for building the **Bayesian Network**, **Hierarchical Bayesian Regression**, and **Hidden Markov Models** that will drive our analysis of movie box office success.
+With these steps, our dataset is robust and ready for:
+- **Bayesian Network Construction** (causal inference),
+- **Hierarchical Bayesian Regression with MCMC Sampling** (predicting box office revenue with uncertainty), and
+- **Hidden Markov Model Analysis** (capturing market dynamics).
 
 <img width="798" alt="image" src="https://github.com/user-attachments/assets/388fe644-72e8-4d81-87c2-5ee787f6de06" />
 <img width="918" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
 <img width="936" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
-
-
 
 ## **Bayesian Network**
 This project leverages a Bayesian Network to predict a movie’s box office success using probabilistic modeling. We apply Bayesian Inference to analyze the impact of key production factors like budget, opening weekend revenue, theater count, genre, and MPAA rating on box office performance.
