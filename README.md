@@ -33,9 +33,10 @@ To further refine our dataset, we applied an **entropy-based feature selection**
 
 Finally, we conducted EDA by visualizing key distributions and correlation structures among the selected features. Histograms and heatmaps were generated to help us understand the underlying data distributions and to identify potential multicollinearity issues. With this rigorous data processing and EDA, our dataset is now well-prepared for building the **Bayesian Network**, **Hierarchical Bayesian Regression**, and **Hidden Markov Models** that will drive our analysis of movie box office success.
 
-![EDA Visualization 1](./images/hmm_tran_matrix.png)
-![EDA Visualization 2](./images/859227bf-a0e8-4518-ab91-de65b95c9122.png)
-![EDA Visualization 3](./images/fccadafd-5618-4ea0-88bf-e76a1cf968a9.png)
+<img width="798" alt="image" src="https://github.com/user-attachments/assets/388fe644-72e8-4d81-87c2-5ee787f6de06" />
+<img width="918" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
+<img width="936" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
+
 
 
 ## **Bayesian Network**
