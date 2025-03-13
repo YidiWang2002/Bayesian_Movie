@@ -217,7 +217,8 @@ _(To be included: Graphs and illustrations to enhance understanding.)_
 
 ### Results & Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
-![Final Model Results](./images/final_result.png)
+![output1](https://github.com/user-attachments/assets/2c64e1d6-1b66-4c6a-84c6-3ff2566975d6)
+
 
 
 #### Key Obeservation:
