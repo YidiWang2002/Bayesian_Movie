@@ -284,10 +284,10 @@ Our current model is capable of handling manual variable inputs for predicting m
 2. **Generating new data from LLM to forecast its box office revenue**
 - We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
 
-5. **Developing a Web Interface or UI for Easier Prediction**  
+3. **Developing a Web Interface or UI for Easier Prediction**  
 - We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
 
-6. **Expanded Feature Set and Scenario Exploration**  
+4. **Expanded Feature Set and Scenario Exploration**  
 - Additional features—such as seasonal indicators, economic indicators, or social media sentiment—could be integrated into the model to capture further nuances in movie performance. This exploration could lead to a richer understanding of factors affecting box office revenue.
 
 
