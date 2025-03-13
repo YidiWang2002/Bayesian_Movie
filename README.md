@@ -64,6 +64,10 @@ This project leverages a Bayesian Network to predict a movie’s box office succ
 - Variable Elimination for probabilistic queries
 - Graphical visualization of dependencies
 
+<img width="960" alt="Screenshot 2025-03-13 at 1 31 23 AM" src="https://github.com/user-attachments/assets/e4af8e2f-dbfa-4eff-91e2-b4f6676780a4" />
+
+In the Bayesian Network Structure, Nodes represent variables in the model, such as Production Budget, Opening Weekend, Genre, MPAA Rating, Max Theaters, Weeks Run, and BoxOfficeSuccess. For example, “Production Budget (USD)" → "Opening Weekend (USD)" suggest that higher budgets impact opening weekend revenue; and "Opening Weekend (USD)" → "BoxOfficeSuccess" indicates that a strong opening weekend is a predictor of overall success.
+
 ### Bayesian Inference Results
 What is the probability of success given a high budget and large theater release?
 
