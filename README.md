@@ -70,54 +70,55 @@ What is the probability of success given a high budget and large theater release
 
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
-### **Hierarchical Bayesian Model**
-1. A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
+## **Hierarchical Bayesian Model**
+### 1. Definition
+A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
 
-2. **Bayesian Framework**
+### **Bayesian Framework**
 In the Bayesian approach, model parameters are treated as random variables, and we update our beliefs about them using observed data. The model combines:
 
 **Prior**: Our initial belief about the parameters.
 **Likelihood**: The probability of the data given the parameters.
 **Posterior**: The updated belief about the parameters after observing the data.
 
-3.**Bayesian Hierarchical Regression**
+### **Bayesian Hierarchical Regression**
 In a **Bayesian Hierarchical Regression**, we predict a target variable (e.g., revenue) based on predictors (e.g., budget, genre) while accounting for group-level effects like genre or country. This improves predictions, especially when data is sparse.
 
-4 **Implementation with PyMC**
+### **Implementation with PyMC**
 The model is implemented using **PyMC**, a library that allows for flexible specification of priors, likelihoods, and model equations, and provides tools for sampling (e.g., MCMC).
 
 ### 2. Feature Engineering 
-1. **Categorical Variable Encoding**
+**Categorical Variable Encoding**
 Used **Label Encoding** for categorical features
 
-2.**Numerical Variable Standardization**
+**Numerical Variable Standardization**
 Applied **StandardScaler** to numerical features
 
-3. **Target Variable**
+**Target Variable**
 Target: **Worldwide Gross (USD)_log**
 
-4. **Group Indices for Hierarchical Model**
+**Group Indices for Hierarchical Model**
 Method: Created group indices to account for group-level effects in the hierarchical model.
 
-### 3. Modelling
-1. **Model Training**
-- **Priors:**
+### Modelling
+**Model Training**
+**Priors:**
     - **alpha**: Normal prior with mean 0 and standard deviation 10.
     - **betas**: Normal priors for the regression coefficients with mean 0 and standard deviation 1.
     - **genre_effects, mpaa_effects, country_effects**: Normal priors for the hierarchical effects associated with genre, MPAA rating, and country, respectively.
     - **Model Equation**: The model combines the fixed effects (betas) and the hierarchical effects (genre_effects, mpaa_effects, country_effects) to model the target variable (y_obs).
 
-- **Likelihood:**
+**Likelihood:**
   The target variable (y_obs) is modeled as a normal distribution with a mean (mu) and a standard deviation (sigma).
 
-2. **Sampling**
+**Sampling**
 The model was fit using **MCMC sampling** with **pm.sample()**.
     The sampling configuration:
         - 2000 total draws
         - 1000 tuning steps
         - 4 chains using 4 core[model_summary.csv](https://github.com/user-attachments/files/19220118/model_summary.csv)
 
-3. **Result**
+**Result**
 
 ![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
 [Uploading model_summary.csv…]()
@@ -177,32 +178,32 @@ MCMC methods provide several significant advantages in the context of predicting
 #### Handling of Uncertainty:
 MCMC naturally incorporates uncertainty in the estimates, providing a full probability distribution for each model parameter. This is particularly useful in scenarios like movie revenue predictions where inherent unpredictability is high due to factors like audience preferences and competitor actions.
 
-#### Complex Models:
+### Complex Models:
 MCMC enables the estimation of more complex models that are not easily solvable with traditional methods due to the integration of prior beliefs and the likelihood from the data. This is useful in adjusting for overfitting and underfitting, making the model more robust to new or unseen data.
 
-#### Flexibility in Model Specification:
+### Flexibility in Model Specification:
 With MCMC, it's easier to specify and fit models that include non-linear relationships, interaction effects, and hierarchical structures—common scenarios in economic data like movie budgets and box office returns.
 
-#### Integration of Prior Knowledge:
+### Integration of Prior Knowledge:
 Prior distributions can be used effectively in MCMC to integrate previous research or expert opinions, which is especially beneficial when historical data on certain types of films (e.g., genres or new directors) might be sparse or non-indicative of future performance.
 
 ### MCMC Formula
 The basic formula for the Metropolis-Hastings algorithm, which is commonly used in MCMC simulations, can be described as follows:
-#### Initialization:
+### Initialization:
 Start with an initial parameter value $\theta^{(0)}$
-#### Iteration:
+### Iteration:
 For each step $t$, generate a candidate parameter $\theta^\*$ from a proposal distribution $q(\theta^*|\theta^{(t-1)}).$   
-#### Acceptance Probability:
+### Acceptance Probability:
 $$\alpha=\min\left(1,\frac{p(\theta^\*|Y)\cdot q(\theta^{(t-1)}|\theta^\*)}{p(\theta^{(t-1)}|Y)\cdot q(\theta^*|\theta^{(t-1)})}\right)$$
 Here, $p(\theta|Y)$  is the posterior distribution, and 𝑞 is the proposal distribution.
-#### Decision:
+### Decision:
 Draw 𝑢 from a uniform distribution U(0,1). If $u\leq\alpha$, accept $\theta^{*}$ as $\theta^{(t)}$; otherwise, set $\theta^{(t)}=\theta^{(t-1)}$
-#### Repeat:
+### Repeat:
 Continue the iteration until convergence.
-#### Implementation in Movie Box-Office Prediction Analysis
+### Implementation in Movie Box-Office Prediction Analysis
 In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
-#### Examples
+### Examples
 ![MCMC Results](./images/MCMC_Result.png)
 
 The model fitting with MCMC sampling produced reliable estimates:
