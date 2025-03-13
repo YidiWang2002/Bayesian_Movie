@@ -220,7 +220,7 @@ The model was fit using **MCMC sampling** with **pm.sample()**.
 ***
 ### Final Results and Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
-![Final Model Result](./images/final_result.png)
+![final_result](https://github.com/user-attachments/assets/9f6170b5-eb89-4bdb-882e-72f61bb73085)
 
 
 #### Key Obeservation:
@@ -249,7 +249,8 @@ After training our final hierarchical Bayesian model-incorporating global interc
 ***
 #### Prediction Model
 
-![MCMC Results](./images/final_pred_unlog.png)
+![Uploading final_result.png…]()
+
 
 ![5cec0fa1e2364d3187383897d96cc39](https://github.com/user-attachments/assets/742680eb-1db4-44a9-b1dd-5c9bdb1ded67)
 
