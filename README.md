@@ -160,7 +160,10 @@ log_transform_cols = [
 df_sorted = df.sort_values(by=['Release_Year', 'Release_Month', 'Release_DayOfWeek'])
 ```
 
-- **Model Compatibility**: Gaussian HMMs assume that observations are continuous and approximately normally distributed within each hidden state. 
+- **Model Compatibility**: Gaussian HMMs assume that observations are continuous and approximately normally distributed within each hidden state.
+
+![image](https://github.com/user-attachments/assets/f6c830cd-db8b-4e59-b69a-f5f245467264)
+
 - **Avoiding High-Dimensional Noise**: Textual data requires additional NLP processing to convert them into numerical form. However, text data typically lack inherent sequential order that reflects market dynamics.
 
 ### 3. Model Building
