@@ -42,8 +42,8 @@ With these steps, our dataset is robust and ready for:
 - **Hidden Markov Model Analysis** (capturing market dynamics).
 
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/ecd6b1cd-f141-4c6e-ac8b-4f9b1b3ffa91" />
-<img width="918" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
-<img width="936" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
 
 ## **Bayesian Network**
 This project leverages a Bayesian Network to predict a movie’s box office success using probabilistic modeling. We apply Bayesian Inference to analyze the impact of key production factors like budget, opening weekend revenue, theater count, genre, and MPAA rating on box office performance.
