@@ -25,31 +25,16 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 
 Our data processing pipeline ensures that our movie metadata is clean, informative, and ready for Bayesian modeling. Key steps include:
 
-- **Data Cleaning & Feature Engineering**
-  - **Remove Unwanted Columns:**  
-    - Dropped pure identifiers and redundant fields (e.g., `id`,`Movie URL`).
-    - Eliminated redundant MPAA dummy columns.
-  - **Date Processing:**  
-    - Converted date columns to datetime.
-    - Extracted temporal features: **Release_Year**, **Release_Month**, and **Release_DayOfWeek**.
-  - **Financial Data Adjustments:**  
-    - Corrected inconsistencies between domestic and worldwide revenues.
-    - Calculated key ratios: **Budget_to_WorldGross_Ratio** and **Domestic_vs_International_Ratio**.
-    - Applied log transformations to reduce skewness (e.g., `Production Budget (USD)_log`).
-  - **Categorical Data Cleaning:**  
-    - Standardized text for fields like **MPAA Rating**, **Source**, **Genre**, and **Creative Type**.
-    - Unified similar categories to ensure consistency.
+**Data Cleaning & Feature Engineering:**  
+We removed unwanted columns—such as pure identifiers (e.g., `id`, `Movie URL`) and redundant fields—and eliminated duplicate MPAA dummy columns. Date columns were converted to datetime objects, and temporal features (Release_Year, Release_Month, Release_DayOfWeek) were extracted. Financial data inconsistencies were corrected by adjusting domestic and worldwide revenue values, calculating key ratios (Budget_to_WorldGross_Ratio and Domestic_vs_International_Ratio), and applying log transformations to reduce skewness (e.g., `Production Budget (USD)_log`). Additionally, categorical fields like MPAA Rating, Source, Genre, and Creative Type were standardized by trimming spaces, converting to title case, and merging similar categories for consistency.
 
-- **Entropy-Based Feature Selection**
-  - Computed metadata for each feature (missing rate, unique values, entropy, coefficient of variation).
-  - Filtered out features with:
-    - More than **50%** missing values,
-    - Entropy percentage below **30%**, and
-    - For numeric features, a coefficient of variation less than **0.2**.
-  - Retained only the most informative features.
+**Entropy-Based Feature Selection:**  
+We computed metadata for each feature—including missing value rates, number of unique values, entropy, and coefficient of variation—and filtered out features with more than 50% missing values, entropy below 30%, or (for numerical features) a coefficient of variation less than 0.2. This automated process allowed us to retain only the most informative features.
 
-- **EDA Visualizations**
-  - Generated histograms (e.g., distribution of log-transformed production budget) and heatmaps (e.g., correlation heatmap) to inspect data distributions and multicollinearity.
+**EDA Visualizations:**  
+To understand data distributions and identify potential multicollinearity, we generated key visualizations such as histograms (e.g., for the log-transformed production budget) and correlation heatmaps.
+
+With these steps, our dataset is robust and ready for the next phases: Bayesian Network Construction for causal inference, Hierarchical Bayesian Regression with MCMC Sampling for revenue prediction and uncertainty quantification, and Hidden Markov Model Analysis to capture market dynamics.
 
 With these steps, our dataset is robust and ready for:
 - **Bayesian Network Construction** (causal inference),
