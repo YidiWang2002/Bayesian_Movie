@@ -27,7 +27,7 @@ Our data processing pipeline ensures that our movie metadata is clean, informati
 
 - **Data Cleaning & Feature Engineering**
   - **Remove Unwanted Columns:**  
-    - Dropped pure identifiers and redundant fields (e.g., `id`, `Movie Name`, `Movie URL`).
+    - Dropped pure identifiers and redundant fields (e.g., `id`,`Movie URL`).
     - Eliminated redundant MPAA dummy columns.
   - **Date Processing:**  
     - Converted date columns to datetime.
@@ -53,7 +53,7 @@ Our data processing pipeline ensures that our movie metadata is clean, informati
 
 With these steps, our dataset is robust and ready for:
 - **Bayesian Network Construction** (causal inference),
-- **Hierarchical Bayesian Regression with MCMC Sampling** (predicting box office revenue with uncertainty), and
+- **Hierarchical Bayesian Regression with MCMC Sampling** (predicting box office revenue with uncertainty)
 - **Hidden Markov Model Analysis** (capturing market dynamics).
 
 <img width="798" alt="image" src="https://github.com/user-attachments/assets/388fe644-72e8-4d81-87c2-5ee787f6de06" />
