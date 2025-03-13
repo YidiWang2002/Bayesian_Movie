@@ -231,26 +231,26 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 #### Key Obeservation:
 1. **Global Intercept (`mu_alpha`)**  
-   - The posterior distribution for `mu_alpha` centers around a moderate positive value, indicating the model’s overall baseline for log-transformed revenue before considering group-level or fixed effects.  
-   - Its MCMC trace is stable and well-mixed, suggesting good convergence.
+- The posterior distribution for `mu_alpha` centers around a moderate positive value, indicating the model’s overall baseline for log-transformed revenue before considering group-level or fixed effects.  
+- Its MCMC trace is stable and well-mixed, suggesting good convergence.
 
 2. **Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
-   - Each group-level parameter has its own posterior distribution, typically centered near zero.  
-   - **Genre and MPAA**: Some categories deviate slightly above or below zero, implying these groups nudge revenue predictions up or down in log space.  
-   - **Keywords and Companies**: Most remain close to zero, suggesting modest but varied effects across different keywords or production entities.  
-   - **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
+- Each group-level parameter has its own posterior distribution, typically centered near zero.  
+- **Genre and MPAA**: Some categories deviate slightly above or below zero, implying these groups nudge revenue predictions up or down in log space.  
+- **Keywords and Companies**: Most remain close to zero, suggesting modest but varied effects across different keywords or production entities.  
+- **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
 
 3. **Fixed Effects Coefficients (`beta`)**  
-   - The posterior distribution of `beta` for numeric variables (e.g., production budget, opening weekend) reveals their average contribution to the log revenue.  
-   - If some `beta` values center away from zero with tight credible intervals, those features have a strong predictive effect.
+- The posterior distribution of `beta` for numeric variables (e.g., production budget, opening weekend) reveals their average contribution to the log revenue.  
+- If some `beta` values center away from zero with tight credible intervals, those features have a strong predictive effect.
 
 4. **Group Variance (`sigma_alpha`)**  
-   - This parameter measures variability across categories within each group (e.g., different genres). A larger value implies more diverse effects; a smaller one suggests the categories behave similarly.  
-   - The traceplot for `sigma_alpha` is stable, indicating the model is confident about how different each category can be from the global mean.
+- This parameter measures variability across categories within each group (e.g., different genres). A larger value implies more diverse effects; a smaller one suggests the categories behave similarly.  
+- The traceplot for `sigma_alpha` is stable, indicating the model is confident about how different each category can be from the global mean.
 
 5. **Residual Error (`sigma`)**  
-   - The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
-   - In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
+- The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
+- In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
 
 ***
 #### Prediction Model
@@ -259,11 +259,11 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 
 1. Strong Positive Correlation
-   - The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
+- The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
 2. High Accuracy in Mid-Range Revenue
-   - For moderate actual values (roughly between 6.0 and 15.0 on the log scale), the points are relatively close to the red dashed line. This suggests that the model predicts reasonably well for mid-range grosses.
+- For moderate actual values (roughly between 6.0 and 15.0 on the log scale), the points are relatively close to the red dashed line. This suggests that the model predicts reasonably well for mid-range grosses.
 3. Greater Dispersion for Extreme Revenues
-   - At very high actual values (beyond ~18–20 on the log scale), the data points begin to spread more。
+- At very high actual values (beyond ~18–20 on the log scale), the data points begin to spread more。
 
 ### Overall Good Fit!
 
@@ -272,16 +272,16 @@ After training our final hierarchical Bayesian model-incorporating global interc
 Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several directions for future work that can enhance its usability and performance:
 
 1. **More Computational Power is needed!**
-   - Training the model using MCMC sampling is computationally intensive—often taking up to 8 hours or more. This long training time is primarily due to the inherent complexity of MCMC sampling in high-dimensional parameter spaces.
+- Training the model using MCMC sampling is computationally intensive—often taking up to 8 hours or more. This long training time is primarily due to the inherent complexity of MCMC sampling in high-dimensional parameter spaces.
    
 2. **Generating new data from LLM to forecast its box office revenue**
-   - We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
+- We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
 
 5. **Developing a Web Interface or UI for Easier Prediction**  
-    - We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
+- We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
 
 6. **Expanded Feature Set and Scenario Exploration**  
-   - Additional features—such as seasonal indicators, economic indicators, or social media sentiment—could be integrated into the model to capture further nuances in movie performance. This exploration could lead to a richer understanding of factors affecting box office revenue.
+- Additional features—such as seasonal indicators, economic indicators, or social media sentiment—could be integrated into the model to capture further nuances in movie performance. This exploration could lead to a richer understanding of factors affecting box office revenue.
 
 
 
