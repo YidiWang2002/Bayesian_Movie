@@ -17,6 +17,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Hierarchical Bayesian Model](#Hierarchical-bayesian-model)
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [MCMC Sampling](#MCMC-Sampling)
+- [Final Result & Visualization](#Final-Results-&-Visualization)
 - [Future Work](#future-work)
 ***
 
