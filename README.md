@@ -270,10 +270,10 @@ After training our final hierarchical Bayesian model-incorporating global interc
 Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several directions for future work that can enhance its usability and performance:
 
 1. **More Computational Power is needed!**
-   -Training the model using MCMC sampling is computationally intensive—often taking up to 8 hours or more. This long training time is primarily due to the inherent complexity of MCMC sampling in high-dimensional parameter spaces.
+   - Training the model using MCMC sampling is computationally intensive—often taking up to 8 hours or more. This long training time is primarily due to the inherent complexity of MCMC sampling in high-dimensional parameter spaces.
    
 2. **Generating new data from LLM to forecast its box office revenue**
-   -We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
+   - We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
 
 5. **Developing a Web Interface or UI for Easier Prediction**  
     - We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
