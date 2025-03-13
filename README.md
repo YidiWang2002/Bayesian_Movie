@@ -70,7 +70,7 @@ What is the probability of success given a high budget and large theater release
 
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
-### **Hierarchical Bayesian Modeling**
+### **Hierarchical Bayesian Model**
 1. A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
 
 2. **Bayesian Framework**
