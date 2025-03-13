@@ -259,24 +259,26 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 1. Strong Positive Correlation
    - The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
-2. Accuracy in Mid-Range
+2. High Accuracy in Mid-Range Revenue
    - For moderate actual values (roughly between 6.0 and 15.0 on the log scale), the points are relatively close to the red dashed line. This suggests that the model predicts reasonably well for mid-range grosses.
-3. Greater Dispersion for Extremes
+3. Greater Dispersion for Extreme Revenues
    - At very high actual values (beyond ~18–20 on the log scale), the data points begin to spread more。
 
 ### Overall Good Fit!
 
 ## Future Work
-Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several promising directions for future work that can enhance its usability and performance:
+Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several directions for future work that can enhance its usability and performance:
 
-1. **Generating new data from LLM to forecast its box office revenue**
-w
+1. **More Computational Power is needed!**
+    Training the model using MCMC sampling is computationally intensive—often taking up to 8 hours or more. This long training time is primarily due to the inherent complexity of MCMC sampling in high-dimensional parameter spaces.
+   
+2. **Generating new data from LLM to forecast its box office revenue**
    We can integrate generative AI (GenAI) techniques to automatically generate new hypothetical variables. Through our model, these new datas can serve as a interactive forecasting tool, enabling stakeholders to explore various market or production scenarios and assess their potential impact on box office performance.
 
-2. **Developing a Web Interface or UI for Easier Prediction**  
+3. **Developing a Web Interface or UI for Easier Prediction**  
    We plan to build a user-friendly webpage or UI that allows users to input data easily and obtain predictions from our current model, mkaing it easy to use. 
 
-3. **Expanded Feature Set and Scenario Exploration**  
+4. **Expanded Feature Set and Scenario Exploration**  
    Additional features—such as seasonal indicators, economic indicators, or social media sentiment—could be integrated into the model to capture further nuances in movie performance. This exploration could lead to a richer understanding of factors affecting box office revenue.
 
 
