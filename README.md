@@ -224,27 +224,11 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 
 #### Key Obeservation:
-1. **Global Intercept (`mu_alpha`)**  
-- The posterior distribution for `mu_alpha` centers around a moderate positive value, indicating the model’s overall baseline for log-transformed revenue before considering group-level or fixed effects.  
-- Its MCMC trace is stable and well-mixed, suggesting good convergence.
-
-2. **Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
+**Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
 - Each group-level parameter has its own posterior distribution, typically centered near zero.  
 - **Genre and MPAA**: Some categories deviate slightly above or below zero, implying these groups nudge revenue predictions up or down in log space.  
 - **Keywords and Companies**: Most remain close to zero, suggesting modest but varied effects across different keywords or production entities.  
 - **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
-
-3. **Fixed Effects Coefficients (`beta`)**  
-- The posterior distribution of `beta` for numeric variables (e.g., production budget, opening weekend) reveals their average contribution to the log revenue.  
-- If some `beta` values center away from zero with tight credible intervals, those features have a strong predictive effect.
-
-4. **Group Variance (`sigma_alpha`)**  
-- This parameter measures variability across categories within each group (e.g., different genres). A larger value implies more diverse effects; a smaller one suggests the categories behave similarly.  
-- The traceplot for `sigma_alpha` is stable, indicating the model is confident about how different each category can be from the global mean.
-
-5. **Residual Error (`sigma`)**  
-- The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
-- In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
 
 ***
 #### Prediction Model
