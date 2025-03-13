@@ -146,8 +146,6 @@ In our application:
 - **Hidden States** represent the underlying market conditions (e.g., "high revenue" vs. "low revenue" periods) that are not directly observed.
 - **Emission Probabilities** assume that the observed data (e.g., log-transformed box office numbers) are generated from a probability distribution (in our case, a Gaussian) specific to each hidden state.
 
-![image](https://github.com/user-attachments/assets/e4190ee4-a062-4a97-847b-213da14e79d6)
-
 - **Transition Matrix** describes the probabilities of transitioning from one hidden state to another between successive movies (or time periods). This matrix is key in understanding the dynamics of market state changes.
 
 
@@ -164,8 +162,8 @@ df_sorted = df.sort_values(by=['Release_Year', 'Release_Month', 'Release_DayOfWe
 ```
 
 - **Model Compatibility**: Gaussian HMMs assume that observations are continuous and approximately normally distributed within each hidden state.
-
-![image](https://github.com/user-attachments/assets/f6c830cd-db8b-4e59-b69a-f5f245467264)
+- 
+![image](https://github.com/user-attachments/assets/e4190ee4-a062-4a97-847b-213da14e79d6)
 
 - **Avoiding High-Dimensional Noise**: Textual data requires additional NLP processing to convert them into numerical form. However, text data typically lack inherent sequential order that reflects market dynamics.
 
