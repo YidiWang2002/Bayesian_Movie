@@ -79,62 +79,6 @@ What is the probability of success given a high budget and large theater release
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
 ***
-## **Hierarchical Bayesian Model**
-### 1. Definition
-A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
-
-### **Bayesian Hierarchical Regression**
-In a **Bayesian Hierarchical Regression**, we predict a target variable (worldwide gross earnings) based on predictors (e.g., budget, release dates) while accounting for group-level effects like genre or country. This improves predictions, especially when data is sparse.
-
-     - **Individual Level Variable** 
-     Weeks Run, Opening Weekend (USD), Production Budget, "Max Theaters"
-     - **Group Level Variable**
-     Genre, MPAA Rating, Production Countries
-
-### **Implementation with PyMC**
-The model is implemented using **PyMC**, a library that allows for flexible specification of priors, likelihoods, and model equations, and provides tools for sampling (e.g., MCMC).
-
-### 2. Feature Engineering 
-**Categorical Variable Encoding**
-Used **Label Encoding** for categorical features
-
-**Numerical Variable Standardization**
-Applied **StandardScaler** to numerical features
-
-**Target Variable**
-Target: **Worldwide Gross (USD)_log**
-
-**Group Indices for Hierarchical Model**
-Method: Created group indices to account for group-level effects in the hierarchical model.
-
-### Modelling
-**Model Training**
-**Priors:**
-- **alpha**: Normal prior with mean 0 and standard deviation 10.
-- **betas**: Normal priors for the regression coefficients with mean 0 and standard deviation 1.
-- **genre_effects, mpaa_effects, country_effects**: Normal priors for the hierarchical effects associated with genre, MPAA rating, and country, respectively.
-- **Model Equation**: The model combines the fixed effects (betas) and the hierarchical effects (genre_effects, mpaa_effects, country_effects) to model the target variable (y_obs).
-
-**Likelihood:**
-  The target variable (y_obs) is modeled as a normal distribution with a mean (mu) and a standard deviation (sigma).
-
-**Sampling**
-The model was fit using **MCMC sampling** with **pm.sample()**.
-    The sampling configuration:
-        - 2000 total draws
-        - 1000 tuning steps
-        - 4 chains using 4 core
-
-**Result**
-
-<img width="519" alt="image" src="https://github.com/user-attachments/assets/af9b68f7-949a-413e-ab7a-401d53a04aaf" />
-
-![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
-
-- **Production Budget** (with a mean of 0.814) suggests that it has a strong positive effect on the **target variable**.
-- The model suggests that the predictor variables have a statistically significant impact on the target variable, with most coefficients being positive. The model fits the data well, as indicated by the stable sigma and the good convergence diagnostics (R-hat values near 1).
-
-***
 ## Hidden Markov Model 
 
 This model outlines the use of a Gaussian Hidden Markov Model (HMM) to capture latent market dynamics in movie box office data. The HMM model should be helpful combing with the Hierarchical Bayesian Model. 
@@ -216,18 +160,62 @@ Continue the iteration until convergence.
 ### Implementation in Movie Box-Office Prediction Analysis
 In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
-#### Examples
-![MCMC Results](./images/MCMC_Result.png)
+***
+## **Hierarchical Bayesian Model**
+### 1. Definition
+A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
 
-The model fitting with MCMC sampling produced reliable estimates:
+### **Bayesian Hierarchical Regression**
+In a **Bayesian Hierarchical Regression**, we predict a target variable (worldwide gross earnings) based on predictors (e.g., budget, release dates) while accounting for group-level effects like genre or country. This improves predictions, especially when data is sparse.
 
-***Intercept:*** Mean = 0.02, SD = 0.24
+     - **Individual Level Variable** 
+     Weeks Run, Opening Weekend (USD), Production Budget, "Max Theaters"
+     - **Group Level Variable**
+     Genre, MPAA Rating, Production Countries
 
-***Beta (slope):*** Mean = 0.98, SD = 0.01
+### **Implementation with PyMC**
+The model is implemented using **PyMC**, a library that allows for flexible specification of priors, likelihoods, and model equations, and provides tools for sampling (e.g., MCMC).
 
-***Sigma (error):*** Mean = 1.86, SD = 0.02
+### 2. Feature Engineering 
+**Categorical Variable Encoding**
+Used **Label Encoding** for categorical features
 
-Trace plots from the MCMC sampling confirmed good mixing and convergence, indicating the robustness of our model in capturing the relationship between production budgets and box office returns. The posterior distributions are indicative of the variability and uncertainty inherent in movie revenue predictions, allowing for better-informed decision-making in production investment strategies.
+**Numerical Variable Standardization**
+Applied **StandardScaler** to numerical features
+
+**Target Variable**
+Target: **Worldwide Gross (USD)_log**
+
+**Group Indices for Hierarchical Model**
+Method: Created group indices to account for group-level effects in the hierarchical model.
+
+### Modelling
+**Model Training**
+**Priors:**
+- **alpha**: Normal prior with mean 0 and standard deviation 10.
+- **betas**: Normal priors for the regression coefficients with mean 0 and standard deviation 1.
+- **genre_effects, mpaa_effects, country_effects**: Normal priors for the hierarchical effects associated with genre, MPAA rating, and country, respectively.
+- **Model Equation**: The model combines the fixed effects (betas) and the hierarchical effects (genre_effects, mpaa_effects, country_effects) to model the target variable (y_obs).
+
+**Likelihood:**
+  The target variable (y_obs) is modeled as a normal distribution with a mean (mu) and a standard deviation (sigma).
+
+**Sampling**
+The model was fit using **MCMC sampling** with **pm.sample()**.
+    The sampling configuration:
+        - 2000 total draws
+        - 1000 tuning steps
+        - 4 chains using 4 core
+
+**Result**
+
+<img width="519" alt="image" src="https://github.com/user-attachments/assets/af9b68f7-949a-413e-ab7a-401d53a04aaf" />
+
+![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
+
+- **Production Budget** (with a mean of 0.814) suggests that it has a strong positive effect on the **target variable**.
+- The model suggests that the predictor variables have a statistically significant impact on the target variable, with most coefficients being positive. The model fits the data well, as indicated by the stable sigma and the good convergence diagnostics (R-hat values near 1).
+
 
 ***
 ### Final Results and Visualization
