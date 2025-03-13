@@ -124,19 +124,6 @@ model_2_states.fit(X_scaled)
 ![HMM Transition Matrix](./images/hmm_tran_matrix.png)
 
 This matrix tells us that if the market is in state 0 (e.g., a high revenue state), there is a 62.3% chance that it will remain in state 0 and a 37.7% chance of switching to state 1 (e.g., a lower revenue state) in the next period.
-
-
-
-
-## **Hierarchical Bayesian Model with HMM**
-
-## Usage
-1. **Load and preprocess data** using `pandas`.
-2. **Train the HMM model** and analyze state transitions.
-3. **(Upcoming) Implement Bayesian modeling** for deeper analysis.
-4. **Interpret movie success patterns** and gain industry insights.
-
-
   
 ## MCMC sampling
 
@@ -189,6 +176,33 @@ The following visualizations illustrate the effectiveness of our models:
 3. **Predicted vs Actual Movie Performance**: Evaluating HMM’s predictive power.
 
 _(To be included: Graphs and illustrations to enhance understanding.)_
+
+### Results & Visualization
+After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
+![Final Model Results](./images/final_result.png)
+
+#### Key Obeservation:
+1. **Global Intercept (`mu_alpha`)**  
+   - The posterior distribution for `mu_alpha` centers around a moderate positive value, indicating the model’s overall baseline for log-transformed revenue before considering group-level or fixed effects.  
+   - Its MCMC trace is stable and well-mixed, suggesting good convergence.
+
+2. **Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
+   - Each group-level parameter has its own posterior distribution, typically centered near zero.  
+   - **Genre and MPAA**: Some categories deviate slightly above or below zero, implying these groups nudge revenue predictions up or down in log space.  
+   - **Keywords and Companies**: Most remain close to zero, suggesting modest but varied effects across different keywords or production entities.  
+   - **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
+
+3. **Fixed Effects Coefficients (`beta`)**  
+   - The posterior distribution of `beta` for numeric variables (e.g., production budget, opening weekend) reveals their average contribution to the log revenue.  
+   - If some `beta` values center away from zero with tight credible intervals, those features have a strong predictive effect.
+
+4. **Group Variance (`sigma_alpha`)**  
+   - This parameter measures variability across categories within each group (e.g., different genres). A larger value implies more diverse effects; a smaller one suggests the categories behave similarly.  
+   - The traceplot for `sigma_alpha` is stable, indicating the model is confident about how different each category can be from the global mean.
+
+5. **Residual Error (`sigma`)**  
+   - The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
+   - In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
 
 ## Future Work
 Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several promising directions for future work that can enhance its usability and performance:
