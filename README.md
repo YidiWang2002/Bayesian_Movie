@@ -8,6 +8,7 @@ Authors: Ritai Na, Dazhou Wu, Yidi Wang, Lucia Liu, Yiyang Yao
 This project explores predicting box office success using a Bayesian approach with movie metadata. 
 By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust probabilistic framework for revenue forecasting.
 Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
+
 ——————
 ## Table of Contents
 - [Overview](#Overview)
@@ -17,6 +18,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
+
 ——————
 ## **Overview**
 **This project develops a robust Bayesian framework for predicting movie box office performance based on comprehensive movie metadata.** By integrating advanced probabilistic methods, our approach harnesses the strengths of multiple modeling techniques:
