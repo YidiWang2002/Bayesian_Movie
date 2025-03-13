@@ -123,9 +123,16 @@ The model was fit using **MCMC sampling** with **pm.sample()**.
     The sampling configuration:
         - 2000 total draws
         - 1000 tuning steps
-        - 4 chains using 4 core[model_summary.csv](https://github.com/user-attachments/files/19220118/model_summary.csv)
+        - 4 chains using 4 core
 
 **Result**
+	mean	sd	hdi_3%	hdi_97%	mcse_mean	mcse_sd	ess_bulk	ess_tail	r_hat
+alpha	13.304	0.603	12.164	14.395	0.014	0.007	1861.0	4115.0	1.0
+betas[0]	0.814	0.026	0.764	0.861	0.0	0.0	15790.0	5914.0	1.0
+betas[1]	0.257	0.016	0.227	0.287	0.0	0.0	9916.0	6211.0	1.0
+betas[2]	0.416	0.042	0.337	0.494	0.0	0.0	10337.0	6604.0	1.0
+betas[3]	0.587	0.019	0.551	0.623	0.0	0.0	16664.0	5848.0	1.0
+genre_effects[0]	0.028	0.338	-0.604	0.656	0.01	0.005	1148.0	2898.0	1.0<img width="519" alt="image" src="https://github.com/user-attachments/assets/af9b68f7-949a-413e-ab7a-401d53a04aaf" />
 
 ![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
 
