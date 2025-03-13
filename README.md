@@ -176,9 +176,9 @@ A **hierarchical model** (also known as a multi-level model) is used when data i
 ### **Bayesian Hierarchical Regression**
 In a **Bayesian Hierarchical Regression**, we predict a target variable (worldwide gross earnings) based on predictors (e.g., budget, release dates) while accounting for group-level effects like genre or country. This improves predictions, especially when data is sparse.
 
-     - **Individual Level Variable** 
+**Individual Level Variable** 
      Weeks Run, Opening Weekend (USD), Production Budget, "Max Theaters"
-     - **Group Level Variable**
+**Group Level Variable**
      Genre, MPAA Rating, Production Countries
 
 ### **Implementation with PyMC**
@@ -219,7 +219,6 @@ The model was fit using **MCMC sampling** with **pm.sample()**.
 
 <img width="519" alt="image" src="https://github.com/user-attachments/assets/af9b68f7-949a-413e-ab7a-401d53a04aaf" />
 
-![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
 
 - **Production Budget** (with a mean of 0.814) suggests that it has a strong positive effect on the **target variable**.
 - The model suggests that the predictor variables have a statistically significant impact on the target variable, with most coefficients being positive. The model fits the data well, as indicated by the stable sigma and the good convergence diagnostics (R-hat values near 1).
