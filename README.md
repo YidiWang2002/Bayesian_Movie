@@ -13,7 +13,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Overview](#Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
 - [Bayesian Network](#Bayesian-Network)
-- [Hierarchical Bayesian Model (HBM)](#Hierarchical-bayesian-model-(HBM))
+- [Hierarchical Bayesian Model](#Hierarchical-bayesian-model)
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
@@ -70,7 +70,7 @@ What is the probability of success given a high budget and large theater release
 
 * Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
-### **Hierarchical Bayesian Modeling (HBM)**
+### **Hierarchical Bayesian Modeling**
 1. A **hierarchical model** (also known as a multi-level model) is used when data is grouped into categories, and observations within groups share similarities. These models account for variations both within and between groups.
 
 2. **Bayesian Framework**
@@ -224,7 +224,7 @@ _(To be included: Graphs and illustrations to enhance understanding.)_
 
 ### Final Results & Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
-![output1](https://github.com/user-attachments/assets/2c64e1d6-1b66-4c6a-84c6-3ff2566975d6)
+![Final Model Result](./images/final_result.png)
 
 
 
@@ -250,6 +250,20 @@ After training our final hierarchical Bayesian model-incorporating global interc
 5. **Residual Error (`sigma`)**  
    - The posterior for `sigma` represents the unexplained variance on the log scale. A higher value indicates the model cannot fully account for revenue fluctuations, while a lower value means it explains more variance.  
    - In real-world box office data, many unobserved factors (e.g., marketing, cultural events) can cause high residual variability.
+
+#### Prediction Model
+
+![MCMC Results](./images/final_pred_unlog.png)
+
+
+1. Strong Positive Correlation
+   - The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
+2. Accuracy in Mid-Range
+   - For moderate actual values (roughly between 6.0 and 15.0 on the log scale), the points are relatively close to the red dashed line. This suggests that the model predicts reasonably well for mid-range grosses.
+3. Greater Dispersion for Extremes
+   - At very high actual values (beyond ~18–20 on the log scale), the data points begin to spread more。
+
+### Overall Good Fit!
 
 ## Future Work
 Our current model is capable of handling manual variable inputs for predicting movie box office revenue. However, there are several promising directions for future work that can enhance its usability and performance:
