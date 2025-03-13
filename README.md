@@ -110,10 +110,10 @@ Method: Created group indices to account for group-level effects in the hierarch
 ### Modelling
 **Model Training**
 **Priors:**
-    - **alpha**: Normal prior with mean 0 and standard deviation 10.
-    - **betas**: Normal priors for the regression coefficients with mean 0 and standard deviation 1.
-    - **genre_effects, mpaa_effects, country_effects**: Normal priors for the hierarchical effects associated with genre, MPAA rating, and country, respectively.
-    - **Model Equation**: The model combines the fixed effects (betas) and the hierarchical effects (genre_effects, mpaa_effects, country_effects) to model the target variable (y_obs).
+- **alpha**: Normal prior with mean 0 and standard deviation 10.
+- **betas**: Normal priors for the regression coefficients with mean 0 and standard deviation 1.
+- **genre_effects, mpaa_effects, country_effects**: Normal priors for the hierarchical effects associated with genre, MPAA rating, and country, respectively.
+- **Model Equation**: The model combines the fixed effects (betas) and the hierarchical effects (genre_effects, mpaa_effects, country_effects) to model the target variable (y_obs).
 
 **Likelihood:**
   The target variable (y_obs) is modeled as a normal distribution with a mean (mu) and a standard deviation (sigma).
