@@ -233,9 +233,7 @@ After training our final hierarchical Bayesian model-incorporating global interc
 ***
 #### Prediction Model
 
-![Uploading final_result.png…]()
-
-
+![final_pred_unlog](https://github.com/user-attachments/assets/8d489afe-72d0-4a16-bf4e-dc9fd5d57e4b)
 ![5cec0fa1e2364d3187383897d96cc39](https://github.com/user-attachments/assets/742680eb-1db4-44a9-b1dd-5c9bdb1ded67)
 
 1. Strong Positive Correlation
