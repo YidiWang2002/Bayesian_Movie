@@ -8,7 +8,7 @@ Authors: Ritai Na, Dazhou Wu, Yidi Wang, Lucia Liu, Yiyang Yao
 This project explores predicting box office success using a Bayesian approach with movie metadata. 
 By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust probabilistic framework for revenue forecasting.
 Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
-
+——————
 ## Table of Contents
 - [Overview](#Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
@@ -17,7 +17,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [MCMC Sampling](#MCMC-Sampling)
 - [Future Work](#future-work)
-
+——————
 ## **Overview**
 **This project develops a robust Bayesian framework for predicting movie box office performance based on comprehensive movie metadata.** By integrating advanced probabilistic methods, our approach harnesses the strengths of multiple modeling techniques:
 
@@ -27,7 +27,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - **MCMC Sampling:** To efficiently estimate the full posterior distributions of model parameters, providing robust uncertainty quantification and credible intervals for revenue forecasts.
 
 **Rigorous data cleaning, feature engineering, and exploratory analysis ensure that our input data is both accurate and informative.** The result is a multi-layered, probabilistic model that not only predicts revenue with enhanced precision but also delivers actionable insights for investors and studios navigating a complex and volatile market environment.
-
+——————
 ## **Data Processing and EDA**
 
 Our data processing pipeline ensures that our movie metadata is clean, informative, and ready for Bayesian modeling. Key steps include:
@@ -37,7 +37,7 @@ We removed unwanted columns—such as pure identifiers (e.g., `id`, `Movie URL`)
 
 **Entropy-Based Feature Selection:**  
 We computed metadata for each feature—including missing value rates, number of unique values, entropy, and coefficient of variation—and filtered out features with more than 50% missing values, entropy below 30%, or (for numerical features) a coefficient of variation less than 0.2. This automated process allowed us to retain only the most informative features.
-
+——————
 **EDA Visualizations:**  
 To understand data distributions and identify potential multicollinearity, we generated key visualizations such as histograms (e.g., for the log-transformed production budget) and correlation heatmaps.
 
@@ -51,7 +51,7 @@ With these steps, our dataset is robust and ready for:
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/ecd6b1cd-f141-4c6e-ac8b-4f9b1b3ffa91" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d266c3b6-8c4c-4c69-b9f4-d58c2e27af91" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/8a7e04d5-4c7a-4880-b47e-7acec7fc93c4" />
-
+——————
 ## **Bayesian Network**
 This project leverages a Bayesian Network to predict a movie’s box office success using probabilistic modeling. We apply Bayesian Inference to analyze the impact of key production factors like budget, opening weekend revenue, theater count, genre, and MPAA rating on box office performance.
 
