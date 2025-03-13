@@ -24,6 +24,22 @@ This project explores the application of **Hidden Markov Models (HMM)** and **Hi
 ## **Data Processing and EDA**
 
 ## **Bayesian Network**
+This project leverages a Bayesian Network to predict a movie’s box office success using probabilistic modeling. We apply Bayesian Inference to analyze the impact of key production factors like budget, opening weekend revenue, theater count, genre, and MPAA rating on box office performance.
+
+- Bayesian Networks for causal relationships
+- Conditional Probability Distributions (CPDs) for likelihood estimation
+- Variable Elimination for probabilistic queries
+- Graphical visualization of dependencies
+
+### Bayesian Inference Results
+What is the probability of success given a high budget and large theater release?
+
+| BoxOfficeSuccess  | Probability  |
+|------------------|-------------|
+| Flop            | 18.77%       |
+| Hit             | 81.23%       |
+
+* Interpretation: Movies with high budgets and large releases have an 81.23% probability of success.
 
 ## **Hierarchical Bayesian Modeling (HBM)**
 
