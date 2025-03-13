@@ -145,6 +145,9 @@ A **Hidden Markov Model (HMM)** is a statistical model for time series data wher
 In our application:
 - **Hidden States** represent the underlying market conditions (e.g., "high revenue" vs. "low revenue" periods) that are not directly observed.
 - **Emission Probabilities** assume that the observed data (e.g., log-transformed box office numbers) are generated from a probability distribution (in our case, a Gaussian) specific to each hidden state.
+
+![image](https://github.com/user-attachments/assets/e4190ee4-a062-4a97-847b-213da14e79d6)
+
 - **Transition Matrix** describes the probabilities of transitioning from one hidden state to another between successive movies (or time periods). This matrix is key in understanding the dynamics of market state changes.
 
 
