@@ -4,14 +4,9 @@ Win 25 | The Matrix Masters 🏆
 
 Authors: Ritai Na, Dazhou Wu, Yidi Wang, Lucia Liu, Yiyang Yao
 
-## **Abstract**
-This project explores predicting box office success using a Bayesian approach with movie metadata. 
-By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust probabilistic framework for revenue forecasting.
-Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
-
 ***
 ## Table of Contents
-- [Overview](#Overview)
+- [Project Overview](#Project-Overview)
 - [Data Processing and EDA](#Data-Processing-and-EDA)
 - [Bayesian Network](#Bayesian-Network)
 - [Hierarchical Bayesian Model](#Hierarchical-bayesian-model)
@@ -19,10 +14,13 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [MCMC Sampling](#MCMC-Sampling)
 - [Final Results and Visualization](#Final-Results-and-Visualization)
 - [Future Work](#future-work)
-***
 
-## **Overview**
-**This project develops a robust Bayesian framework for predicting movie box office performance based on comprehensive movie metadata.** By integrating advanced probabilistic methods, our approach harnesses the strengths of multiple modeling techniques:
+***
+## **Project Overview**
+
+This project explores predicting box office success using a Bayesian approach with movie metadata. 
+By integrating Bayesian Networks, Hierarchical Bayesian Regression, Hidden Markov Models, and MCMC sampling, we develop a robust model for revenue forecasting.
+Our methodology provides credible intervals for revenue estimates, assisting investors and studios in optimizing financial decision-making.
 
 - **Bayesian Networks:** To capture causal relationships among key production factors—such as budget, release scale, genre, and rating—thereby uncovering the underlying mechanisms that drive box office success.
 - **Hierarchical Bayesian Regression:** To model both overall trends and group-specific variations, enabling refined predictions that account for differences across genres, markets, and other categorical influences.
@@ -258,6 +256,7 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 ![MCMC Results](./images/final_pred_unlog.png)
 
+![5cec0fa1e2364d3187383897d96cc39](https://github.com/user-attachments/assets/742680eb-1db4-44a9-b1dd-5c9bdb1ded67)
 
 1. Strong Positive Correlation
 - The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
