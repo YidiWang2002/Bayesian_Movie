@@ -126,6 +126,7 @@ The model was fit using **MCMC sampling** with **pm.sample()**.
         - 4 chains using 4 core
 
 **Result**
+
 <img width="519" alt="image" src="https://github.com/user-attachments/assets/af9b68f7-949a-413e-ab7a-401d53a04aaf" />
 
 ![output](https://github.com/user-attachments/assets/e1c2e77f-aa28-4daa-ba2d-666dbf1da7bd)
