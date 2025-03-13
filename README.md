@@ -17,7 +17,7 @@ Our methodology provides credible intervals for revenue estimates, assisting inv
 - [Hierarchical Bayesian Model](#Hierarchical-bayesian-model)
 - [Hidden Markov Model](#Hidden-Markov-Model)
 - [MCMC Sampling](#MCMC-Sampling)
-- [Final Result & Visualization](#Final-Results-&-Visualization)
+- [Final Results and Visualization](#Final-Results-and-Visualization)
 - [Future Work](#future-work)
 ***
 
@@ -225,7 +225,7 @@ The model fitting with MCMC sampling produced reliable estimates:
 Trace plots from the MCMC sampling confirmed good mixing and convergence, indicating the robustness of our model in capturing the relationship between production budgets and box office returns. The posterior distributions are indicative of the variability and uncertainty inherent in movie revenue predictions, allowing for better-informed decision-making in production investment strategies.
 
 ***
-### Final Results & Visualization
+### Final Results and Visualization
 After training our final hierarchical Bayesian model-incorporating global intercepts, group-level effects (e.g., Genre, MPAA, Keywords, Companies, HMM state), and fixed effects (e.g., numeric variables)，we examined the posterior distributions and parameter traceplots to assess both convergence and interpretability.
 ![Final Model Result](./images/final_result.png)
 
