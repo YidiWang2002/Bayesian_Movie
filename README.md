@@ -118,6 +118,17 @@ Continue the iteration until convergence.
 In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
 ### Results & Visualization
+![MCMC Results](./images/MCMC_Result.png)
+
+The model fitting with MCMC sampling produced reliable estimates:
+
+***Intercept:*** Mean = 0.02, SD = 0.24
+
+***Beta (slope):*** Mean = 0.98, SD = 0.01
+
+***Sigma (error):*** Mean = 1.86, SD = 0.02
+
+Trace plots from the MCMC sampling confirmed good mixing and convergence, indicating the robustness of our model in capturing the relationship between production budgets and box office returns. The posterior distributions are indicative of the variability and uncertainty inherent in movie revenue predictions, allowing for better-informed decision-making in production investment strategies.
 
 The following visualizations illustrate the effectiveness of our models:
 1. **Hidden States Over Time**: A time series showing how movie states transition.
