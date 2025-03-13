@@ -238,7 +238,7 @@ After training our final hierarchical Bayesian model-incorporating global interc
 - **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
 
 ***
-### Prediction Model
+## Prediction Model
 
 ![final_pred_unlog](https://github.com/user-attachments/assets/8d489afe-72d0-4a16-bf4e-dc9fd5d57e4b)
 ![5cec0fa1e2364d3187383897d96cc39](https://github.com/user-attachments/assets/742680eb-1db4-44a9-b1dd-5c9bdb1ded67)
