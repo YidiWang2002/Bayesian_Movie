@@ -150,7 +150,7 @@ In our application:
 
 ### 2. Feature Engineering for HMM
 Effective feature engineering is crucial for accurately capturing the latent dynamics in movie box office data. Our approach involves processing various types of features, but it is important to note that for the HMM model, we only use numerical variables since there may be
-- **Temporal Ordering**: Numerical variables such as log-transformed production budget, domestic gross, worldwide gross, opening weekend, max theaters, and weeks run naturally have a time order when arranged sequentially by movie release timing. This temporal ordering is essential for HMMs to capture market dynamics.
+- **Temporal Ordering**: While these variables themselves do not inherently follow a time order, they can be arranged sequentially based on movie release dates to introduce a structured timeline for analysis
 ```python
 log_transform_cols = [
     'Production Budget (USD)', 'Domestic Gross (USD)', 'Worldwide Gross (USD)','Opening Weekend (USD)', 'Max Theaters', 'Weeks Run'
