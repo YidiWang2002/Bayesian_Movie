@@ -191,32 +191,32 @@ MCMC methods provide several significant advantages in the context of predicting
 #### Handling of Uncertainty:
 MCMC naturally incorporates uncertainty in the estimates, providing a full probability distribution for each model parameter. This is particularly useful in scenarios like movie revenue predictions where inherent unpredictability is high due to factors like audience preferences and competitor actions.
 
-### Complex Models:
+#### Complex Models:
 MCMC enables the estimation of more complex models that are not easily solvable with traditional methods due to the integration of prior beliefs and the likelihood from the data. This is useful in adjusting for overfitting and underfitting, making the model more robust to new or unseen data.
 
-### Flexibility in Model Specification:
+#### Flexibility in Model Specification:
 With MCMC, it's easier to specify and fit models that include non-linear relationships, interaction effects, and hierarchical structures—common scenarios in economic data like movie budgets and box office returns.
 
-### Integration of Prior Knowledge:
+#### Integration of Prior Knowledge:
 Prior distributions can be used effectively in MCMC to integrate previous research or expert opinions, which is especially beneficial when historical data on certain types of films (e.g., genres or new directors) might be sparse or non-indicative of future performance.
 
 ### MCMC Formula
 The basic formula for the Metropolis-Hastings algorithm, which is commonly used in MCMC simulations, can be described as follows:
-### Initialization:
+#### Initialization:
 Start with an initial parameter value $\theta^{(0)}$
-### Iteration:
+#### Iteration:
 For each step $t$, generate a candidate parameter $\theta^\*$ from a proposal distribution $q(\theta^*|\theta^{(t-1)}).$   
-### Acceptance Probability:
+#### Acceptance Probability:
 $$\alpha=\min\left(1,\frac{p(\theta^\*|Y)\cdot q(\theta^{(t-1)}|\theta^\*)}{p(\theta^{(t-1)}|Y)\cdot q(\theta^*|\theta^{(t-1)})}\right)$$
 Here, $p(\theta|Y)$  is the posterior distribution, and 𝑞 is the proposal distribution.
-### Decision:
+#### Decision:
 Draw 𝑢 from a uniform distribution U(0,1). If $u\leq\alpha$, accept $\theta^{*}$ as $\theta^{(t)}$; otherwise, set $\theta^{(t)}=\theta^{(t-1)}$
-### Repeat:
+#### Repeat:
 Continue the iteration until convergence.
 ### Implementation in Movie Box-Office Prediction Analysis
 In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
-### Examples
+#### Examples
 ![MCMC Results](./images/MCMC_Result.png)
 
 The model fitting with MCMC sampling produced reliable estimates:
