@@ -127,6 +127,14 @@ model_2_states.fit(X_scaled)
 
 This matrix tells us that if the market is in state 0 (e.g., a high revenue state), there is a 62.3% chance that it will remain in state 0 and a 37.7% chance of switching to state 1 (e.g., a lower revenue state) in the next period.
 
+### 5. Column Preparations
+
+Variable ready to go.
+```python
+hidden_states = model_2_states.predict(X_scaled)
+df_features['Hidden_State'] = hidden_states
+```
+
 ***
 ## MCMC sampling
 
