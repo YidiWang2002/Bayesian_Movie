@@ -232,10 +232,23 @@ After training our final hierarchical Bayesian model-incorporating global interc
 
 #### Key Obeservation:
 **Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
-- Each group-level parameter has its own posterior distribution, typically centered near zero.  
-- **Genre and MPAA**: Some categories deviate slightly above or below zero, implying these groups nudge revenue predictions up or down in log space.  
-- **Keywords and Companies**: Most remain close to zero, suggesting modest but varied effects across different keywords or production entities.  
-- **HMM State (`alpha_hmm`)**: Reflects how the hidden market state (derived from our Gaussian HMM) shifts predicted revenue. If its mean is uniquely positive or negative, it indicates a notable impact from latent market conditions.
+- Different color curves represent the posterior density of divided small groups for the whole groups.  
+- Left plot represent as Posterior Density Plot | Right plot represent as MCMC trace plot
+  - Genre:
+      - Left: Each distribution represents its effects on box office revenue. The peak around 3.8 suggests the most genres have a similiar effect. Two tails shows that fewer genres have significantly high effects.
+      - Right: MCMC sampling osccilate without strong trends, showing the alpha_genre converges well.
+  -  MPAA:
+        - Left: Each colored curve should represent a different MPAA rating. Most of the ratings have a similar influence on revenue. But we can see that some of the ratings do have higher influence on revenue.
+        - Right: Purple and Pink rating initially influence box office revenue more and the other rating lines have a realatively small influencing pwoer. But at last, they gradually converge.
+  - Keyword:
+        - Left: Most of the keywords have a positive effect on revenue since the majority of the peak value is around 4. The variance amoung different commpanies is high. 
+        - Right: High variablity in the inital iterations. Chains finally remain stable and reached convergence. 
+    - Financing Companies:
+          - Left: Nearly the same with Keywords group.
+          - Right: Nearly the same with Keywords group.
+    - HMM (High or Low revenue state):
+          - Left: Both hidden states influence revenue in a normally distributed manner. But state 1 have a slightly larger effect.
+          - Right: There is no divergence or long term trend. But the number scale here is noticeable, which means the high or low revenue state is relatively significant.
 
 ***
 ## Prediction Model
