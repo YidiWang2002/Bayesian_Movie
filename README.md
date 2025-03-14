@@ -244,11 +244,11 @@ After training our final hierarchical Bayesian model-incorporating global interc
         - Left: Most of the keywords have a positive effect on revenue since the majority of the peak value is around 4. The variance amoung different commpanies is high. 
         - Right: High variablity in the inital iterations. Chains finally remain stable and reached convergence. 
     - Financing Companies:
-          - Left: Nearly the same with Keywords group.
-          - Right: Nearly the same with Keywords group.
+        - Left: Nearly the same with Keywords group.
+        - Right: Nearly the same with Keywords group.
     - HMM (High or Low revenue state):
-          - Left: Both hidden states influence revenue in a normally distributed manner. But state 1 have a slightly larger effect.
-          - Right: There is no divergence or long term trend. But the number scale here is noticeable, which means the high or low revenue state is relatively significant.
+      - Left: Both hidden states influence revenue in a normally distributed manner. But state 1 have a slightly larger effect.
+      - Right: There is no divergence or long term trend. But the number scale here is noticeable, which means the high or low revenue state is relatively significant.
 
 ***
 ## Prediction Model
