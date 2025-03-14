@@ -254,13 +254,11 @@ After training our final hierarchical Bayesian model-incorporating global interc
 ## Prediction Model
 
 ![final_pred_unlog](https://github.com/user-attachments/assets/8d489afe-72d0-4a16-bf4e-dc9fd5d57e4b)
-![5cec0fa1e2364d3187383897d96cc39](https://github.com/user-attachments/assets/742680eb-1db4-44a9-b1dd-5c9bdb1ded67)
 
-1. Strong Positive Correlation
-- The points generally follow a diagonal trend, indicating that as the actual worldwide gross increases, the model’s predicted values also increase.
-2. High Accuracy in Mid-Range Revenue
+
+1. High Accuracy in Mid-Range Revenue
 - For moderate actual values (roughly between 6.0 and 15.0 on the log scale), the points are relatively close to the red dashed line. This suggests that the model predicts reasonably well for mid-range grosses.
-3. Greater Dispersion for Extreme Revenues
+2. Greater Dispersion for Extreme Revenues
 - At very high actual values (beyond ~18–20 on the log scale), the data points begin to spread more。
 
 ### Overall Good Fit!
