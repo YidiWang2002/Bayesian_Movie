@@ -234,13 +234,13 @@ After training our final hierarchical Bayesian model-incorporating global interc
 **Group-Level Effects (`genre`, `mpaa`, `keywords`, `companies`, `hmm`)**  
 - Different color curves represent the posterior density of divided small groups for the whole groups.  
 - Left plot represent as Posterior Density Plot | Right plot represent as MCMC trace plot
-  - Genre:
+    - Genre:
       - Left: Each distribution represents its effects on box office revenue. The peak around 3.8 suggests the most genres have a similiar effect. Two tails shows that fewer genres have significantly high effects.
       - Right: MCMC sampling osccilate without strong trends, showing the alpha_genre converges well.
-  -  MPAA:
+    -  MPAA:
         - Left: Each colored curve should represent a different MPAA rating. Most of the ratings have a similar influence on revenue. But we can see that some of the ratings do have higher influence on revenue.
         - Right: Purple and Pink rating initially influence box office revenue more and the other rating lines have a realatively small influencing pwoer. But at last, they gradually converge.
-  - Keyword:
+    - Keyword:
         - Left: Most of the keywords have a positive effect on revenue since the majority of the peak value is around 4. The variance amoung different commpanies is high. 
         - Right: High variablity in the inital iterations. Chains finally remain stable and reached convergence. 
     - Financing Companies:
