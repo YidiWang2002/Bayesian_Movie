@@ -166,7 +166,7 @@ Draw 𝑢 from a uniform distribution U(0,1). If $u\leq\alpha$, accept $\theta^{
 #### Repeat:
 Continue the iteration until convergence.
 ### Implementation in Movie Box-Office Prediction Analysis
-In our movie box office prediction model, the PyMC3 library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
+In our movie box office prediction model, the PyMC library facilitated the implementation of Bayesian linear regression with MCMC. We modeled the logarithm of the domestic box office revenue as a linear function of the logarithm of the production budget. Here's the detailed implementation:
 
 ***
 ## **Hierarchical Bayesian Model**
