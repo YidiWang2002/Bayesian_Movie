@@ -178,6 +178,7 @@ In a **Bayesian Hierarchical Regression**, we predict a target variable (worldwi
 
 **Individual Level Variable** 
      Weeks Run, Opening Weekend (USD), Production Budget, "Max Theaters"
+     
 **Group Level Variable**
      Genre, MPAA Rating, Production Countries
 
